@@ -3,6 +3,8 @@ module Nanoc::Helpers
   module Rendering
     include Nanoc::Helpers::Capturing
 
+    extend Nanoc::Int::Memoization
+
     # @param [String] identifier
     # @param [Hash] other_assigns
     #
@@ -63,5 +65,6 @@ module Nanoc::Helpers
         result
       end
     end
+    memoize :render
   end
 end
